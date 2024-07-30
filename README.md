@@ -11,7 +11,7 @@ But I have also done the test case checking of the code with **test_order_analys
 and also tried to visualize the output data through libraries available in python like matplotlib and seaborn 
 with **order_visualization.py**
 
-# Online Store Order Analysis and Visualization
+# Order Analysis and Visualization
 
 # Overview
 
