@@ -35,6 +35,19 @@ def visualize_revenue_by_product(df):
     plt.tight_layout()
     plt.show()
 
+# Function to visualize total revenue by each customer
+def visualize_revenue_by_customer(df):
+    revenue_by_customer = total_revenue_by_customer(df)
+    
+    plt.figure(figsize=(10, 5))
+    sns.barplot(x=revenue_by_customer.index.astype(str), y=revenue_by_customer.values, palette="cividis")
+    plt.title('Total Revenue by Customer')
+    plt.xlabel('Customer ID')
+    plt.ylabel('Revenue')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
 # Function to visualize the top N customers by revenue
 def visualize_top_customers(df, top_n=10):
     # Calculate total revenue for each customer and get the top N customers
@@ -52,7 +65,7 @@ def visualize_top_customers(df, top_n=10):
 
 # Main function to load data and create visualizations
 def main():
-    # File path to the dataset
+    # File path to the dataset{Use file path according to your file location}
     file_path = "C:\\Users\\91945\\Desktop\\tanX\\orders.csv"
     
     # Load data from the CSV file
@@ -64,6 +77,8 @@ def main():
         visualize_revenue_by_month(df)
         # Visualize total revenue by product
         visualize_revenue_by_product(df)
+        # Visualize total revenue by customer
+        visualize_revenue_by_customer(df)
         # Visualize top N customers by revenue
         visualize_top_customers(df, top_n=10)
 
